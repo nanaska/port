@@ -28,7 +28,7 @@ export default function AnimatedBlock() {
         className="mr-auto block px-4 md:px-0">
             <h1 id="home" className="text-4xl font-bold md:text-5xl">  Hi, my name is <span className="gradient-text ">Denis Shakhov.</span><br/> This is my portfolio
             </h1>
-            <h2 className="font-normal text-base text-gray-400">Build fully functional accessible web applications with ease – Mantine includes more than 100 customizable components and hooks to cover you in any situation</h2>
+            <h2 className="font-normal text-base text-gray-400">I'm full stack developer that living in Yaroslavl</h2>
             
             <ButtonFor className="m-2">More about me</ButtonFor>
     </motion.div>}
