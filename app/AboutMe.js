@@ -17,7 +17,7 @@ export default function AboutMe() {
 
   return (
     <div>
-      <span id="works" className="my-3"><h2 className="text-3xl">My works</h2></span>
+      <span id="works" className="mb-5"><h2 className="text-4xl">My works</h2></span>
         <div className="embla relative" >
         <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container">
@@ -33,10 +33,10 @@ export default function AboutMe() {
 </div>
        </div>
       </div>
-      <button className="absolute bg-white rounded-[180px] p-3 bg-opacity-30 backdrop-blur top-[40%] left-0" onClick={scrollPrev}>
+      <button className="absolute hover:scale-105 active:scale-100 duration-75 bg-white rounded-[180px] p-3 bg-opacity-30 backdrop-blur top-[40%] left-[5px]" onClick={scrollPrev}>
         <Image src={`/left.svg`} width={40} height={40}/>
       </button>
-      <button className="absolute rotate-180 rounded-[180px] p-3 bg-opacity-30 backdrop-blur bg-white top-[40%] right-0" onClick={scrollNext}>
+      <button className="absolute hover:scale-105 active:scale-100 duration-75 rotate-180 rounded-[180px] p-3 bg-opacity-30 backdrop-blur bg-white top-[40%] right-[5px]" onClick={scrollNext}>
       <Image src={`/left.svg`} width={40} height={40}/>
       </button>
     </div>

@@ -1,4 +1,9 @@
+'use client'
+import { Loading as Load } from "@nextui-org/react";
 export default function Loading() {
-    // You can add any UI inside Loading, including a Skeleton.
-    return (<div>123123</div>)
+    
+
+
+
+    return(<div className="flex items-center h-screen justify-center"> <Load color={`secondary`}/></div>);
   }
