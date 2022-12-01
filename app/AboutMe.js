@@ -2,21 +2,43 @@
 import Image from "next/image";
 import CardOfItem from "./CardOfItem";
 import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
+import { useCallback } from "react";
 
 export default function AboutMe() {
-    const [emblaRef] = useEmblaCarousel()
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
   return (
     <div>
-        <div className="embla" ref={emblaRef}>
+      <span id="works" className="my-3"><h2 className="text-3xl">My works</h2></span>
+        <div className="embla relative" >
+        <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container">
             <div className="embla__slide">
+      
             <CardOfItem realLink={`https://sagay.ru`} descAboutTheDoneWork={`This is my first complete freelance website`} descOfWebsite={`The first pizza and rolls restouran in Danilov`} linkToWebsite="sagay.ru" image={`https://res.cloudinary.com/dd7z5d3qu/image/upload/v1669830510/79b86ef3a30e54558a31ad5b7d6974c4-1536x1023_ehtfwh.jpg`}/>
-        
-
-            </div>
-            <div className="embla__slide">Slide 2</div>
-            <div className="embla__slide">Slide 3</div>
       </div>
+            <div className="embla__slide">
+            <CardOfItem realLink={`https://sagay.ru`} descAboutTheDoneWork={`This is my first complete freelance website`} descOfWebsite={`The first pizza and rolls restouran in Danilov`} linkToWebsite="sagay.ru" image={`https://res.cloudinary.com/dd7z5d3qu/image/upload/v1669830510/79b86ef3a30e54558a31ad5b7d6974c4-1536x1023_ehtfwh.jpg`}/>
+</div>
+            <div className="embla__slide">
+            <CardOfItem realLink={`https://sagay.ru`} descAboutTheDoneWork={`This is my first complete freelance website`} descOfWebsite={`The first pizza and rolls restouran in Danilov`} linkToWebsite="sagay.ru" image={`https://res.cloudinary.com/dd7z5d3qu/image/upload/v1669830510/79b86ef3a30e54558a31ad5b7d6974c4-1536x1023_ehtfwh.jpg`}/>
+</div>
+       </div>
+      </div>
+      <button className="absolute bg-white rounded-[180px] p-3 bg-opacity-30 backdrop-blur top-[40%] left-0" onClick={scrollPrev}>
+        <Image src={`/left.svg`} width={40} height={40}/>
+      </button>
+      <button className="absolute rotate-180 rounded-[180px] p-3 bg-opacity-30 backdrop-blur bg-white top-[40%] right-0" onClick={scrollNext}>
+      <Image src={`/left.svg`} width={40} height={40}/>
+      </button>
     </div>
         
         

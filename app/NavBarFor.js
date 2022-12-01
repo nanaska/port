@@ -25,7 +25,7 @@ export default function NavBarFor(){
         <Navbar.Content >
           <Navbar.Link href="#">Home</Navbar.Link>
           <Navbar.Link href="#about">About me</Navbar.Link>
-          <Navbar.Link href="#">My expirience</Navbar.Link>
+          <Navbar.Link href="#works">My expirience</Navbar.Link>
           <Navbar.Link href="https://github.com/nanaska?tab=repositories">
                 <Image src={`/icons8-github.svg`} width={30} height={30}/>
             

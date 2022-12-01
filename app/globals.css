@@ -6,8 +6,6 @@
     background: linear-gradient(to left top, rgb(236, 72, 153), rgb(239, 68, 68), rgb(234, 179, 8));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
-  
     }
     .embla {
         overflow: hidden;
@@ -16,5 +14,7 @@
         display: flex;
       }
       .embla__slide {
-        flex: 1 0 100%;
+        margin-left: 12px;
+        margin-right: 12px;
+        flex: 0 0 70%;
       }
