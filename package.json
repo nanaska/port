@@ -12,10 +12,11 @@
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
     "@mantine/carousel": "^5.8.4",
-    "@mantine/core": "^5.8.4",
+    "@mantine/core": "^5.9.0",
     "@mantine/hooks": "^5.8.4",
     "@mantine/next": "^5.8.4",
     "@nextui-org/react": "^1.0.0-beta.10",
+    "@tabler/icons": "^1.114.0",
     "embla-carousel-autoplay": "^7.0.5",
     "embla-carousel-react": "^7.0.5",
     "eslint": "8.28.0",
@@ -24,7 +25,8 @@
     "next": "13.0.5",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import ButtonFor from "./ButtonFor";
 import { useState } from "react";
+import TextForAnimatedBlock from "./textForAnimatedblock";
 
 export default function AnimatedBlock() {
   const [bg, setBg] = useState(false);
@@ -28,19 +29,9 @@ export default function AnimatedBlock() {
           initial={{ opacity: 0, scale: 1, x: -300 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 1.5 }}
-          className="mr-auto block px-4 md:px-0"
+          className="mr-auto block  px-4 md:px-0"
         >
-          <h1 id="home" className="text-4xl font-bold md:text-5xl">
-            {" "}
-            Hi, my name is{" "}
-            <span className="gradient-text whitespace-nowrap">
-              Denis Shakhov.
-            </span>
-            <br /> This is my portfolio
-          </h1>
-          <h2 className="font-normal text-base text-gray-400">
-            I'm full stack developer that living in Yaroslavl
-          </h2>
+          <TextForAnimatedBlock/>
 
           <ButtonFor className="m-2">More about me</ButtonFor>
         </motion.div>
