@@ -11,10 +11,10 @@ export default function AnimatedBlock() {
     <>
       <motion.div
         initial={{
-          height: "140vh",
+          width: "100%",
         }}
         animate={{
-          height: "0vh",
+          width: "0%",
         }}
         transition={{
           duration: 1.2,
@@ -22,7 +22,7 @@ export default function AnimatedBlock() {
         onAnimationComplete={() => {
           setBg(true);
         }}
-        className="bg-white top-0 h-screen z-10 w-full absolute"
+        className="bg-white top-0 h-full z-10 w-screen absolute"
       ></motion.div>
       {bg && (
         <motion.div

@@ -11,6 +11,9 @@ export default function InputForm() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [additionalInfo, setAdditionalInfo] = useState("")
+    const [infoVal, setInfoVal] = useState(0)
+    const [nameVal, setNameVal] = useState(0)
+    const [emailVal, setEmailVal] = useState(0)
     const notifyErr = () => toast.error('Something went wrong 🤒', {
         position: "top-right",
         autoClose: 4500,
@@ -46,9 +49,23 @@ export default function InputForm() {
                 .then(response => response.json())
                 .then(data => {
                     notifySuc()
+                    setInfoVal(1)
+                    setNameVal(1)
+                    setEmailVal(1)
                 })
         } else {
             notifyErr()
+            if (name.length == 0){
+                setNameVal(2)
+            }else {setNameVal(0)}
+            if (email.length == 0){
+                setEmailVal(2)
+            }else{setEmailVal(0)}
+            if (additionalInfo.length == 0){
+                setInfoVal(2)
+            }else{
+                setInfoVal(0)
+            }
 
         }
 
@@ -56,16 +73,30 @@ export default function InputForm() {
 
 // ДОДЕЛАТЬ ФУНКЦИОНАЛ В СЛУЧАЕ ЕСЛИ НЕ ВСЕ ПОЛЯ ЗАПОЛНЕНЫ ПОДСВЕЧИВАТЬ КРАСНЫМ
 return (<div className="flex flex-col items-center justify-center">
-    <div className="w-full grid grid-cols-1  md:grid-cols-2 place-items-stretch gap-x-0 gap-y-8 md:gap-y-0 md:gap-x-4 my-2">
-        <Input bordered labelPlaceholder="Name" className="w-full" value={name} onChange={(e) => {
+    <div className="w-full grid grid-cols-1  md:grid-cols-2 place-items-stretch gap-x-0 gap-y-8 md:gap-y-0 md:gap-x-4 my-4">
+        <Input
+            helperText={`${nameVal === 0 ? "" : ""}${nameVal === 1 ? "" : ""}${nameVal === 2 ? "error" : ""}`}
+            bordered
+            labelPlaceholder="Name"
+            className="w-full"
+            value={name}
+            onChange={(e) => {
             setName(e.target.value)
-        }} initialValue=""/>
-        <Input bordered labelPlaceholder="Type hear your contacts" className="w-full" value={email} onChange={(e) => {
+        }}
+            initialValue=""/>
+        <Input
+            helperText={`${emailVal === 0 ? "" : ""}${emailVal == 1 ? "" : ""}${emailVal === 2 ? "error" : ""}`}
+            bordered
+            labelPlaceholder="Type hear your contacts"
+            className="w-full"
+            value={email}
+            onChange={(e) => {
             setEmail(e.target.value)
         }} initialValue=""/>
     </div>
     <div className="w-full grid grid-cols-1 place-items-stretch gap-x-4 my-2 mt-8">
         <Textarea
+            helperText={`${infoVal === 0 ? "" : ""}${infoVal === 1 ? "" : ""}${infoVal === 2 ? "error" : ""}`}
             bordered
             value={additionalInfo} onChange={(e) => {
             setAdditionalInfo(e.target.value)

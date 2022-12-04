@@ -1,7 +1,7 @@
 "use client";
-import { Navbar, Button, Text, Link } from "@nextui-org/react";
+import { Navbar, Text } from "@nextui-org/react";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+
 import Image from "next/image";
 export default function NavBarFor() {
   const [feg, setFeg] = useState(false);
@@ -13,16 +13,16 @@ export default function NavBarFor() {
   }, []);
   return (
     <>
-      {feg && (
-        <Navbar className=" " isBordered variant="floating">
-          <Navbar.Brand>
+
+        <Navbar className={` ${feg ? "bg-opacity-100 opacity-100" : "bg-opacity-0 opacity-0"} text-white transition duration-100`} isBordered variant="floating">
+          <Navbar.Brand >
             <Text b className="text-xl" color="inherit" hideIn="xs">
               Denis Shakhov
             </Text>
           </Navbar.Brand>
-          <Navbar.Content>
-            <Navbar.Link href="#">Home</Navbar.Link>
-            <Navbar.Link href="#about">About me</Navbar.Link>
+          <Navbar.Content >
+            <Navbar.Link href="#"><span className="text-white">Home</span></Navbar.Link>
+            <Navbar.Link href="#about"><span className="text-white">About me</span></Navbar.Link>
             <Navbar.Link href="#works">My expirience</Navbar.Link>
             <Navbar.Link href="#contactme">Contact me</Navbar.Link>
             <Navbar.Link href="https://github.com/nanaska?tab=repositories">
@@ -34,7 +34,7 @@ export default function NavBarFor() {
             </Navbar.Link>
           </Navbar.Content>
         </Navbar>
-      )}
+
     </>
   );
 }

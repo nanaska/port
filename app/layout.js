@@ -4,7 +4,7 @@ import Provider from "./providers/provider";
 export default function RootLayout({ children }) {
 
   return (
-    <html>
+    <html lang="ru">
       <head />
 
       <body>
