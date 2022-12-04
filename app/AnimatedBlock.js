@@ -11,10 +11,10 @@ export default function AnimatedBlock() {
     <>
       <motion.div
         initial={{
-          height: "100%",
+          height: "140vh",
         }}
         animate={{
-          height: "0%",
+          height: "0vh",
         }}
         transition={{
           duration: 1.2,

@@ -18,7 +18,7 @@ export default function HeroOnNextUi() {
 
       </section>
 
-      <section className="min-h-[90vh] mx-auto max-w-5xl flex justify-center items-center">
+      <section className="min-h-[20vh] mx-auto max-w-5xl flex justify-center items-center">
         <DescriptionOfMe />
       </section>
       <section className="w-full ">
